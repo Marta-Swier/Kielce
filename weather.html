@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,900&display=swap" rel="stylesheet">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        body {
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  font-family: "Bacasime Antique", serif;
+}
+h1 {
+  color: blue;
+  font-family: "Bacasime Antique", serif;
+}
+h3 {
+  color: purple;
+}
+.col-sm-4 {
+  font-weight: serif;
+  background-color: rgb(237, 229, 238);
+}
+.col-md-push-6 {
+  text-align: left;
+}
+.col-sm-4 {
+  text-align: left;
+}
+#search-city-input {
+  border-radius: 10px;
+  background-color: rgba(255, 252, 247, 0.9);
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  width: 300px;
+  text-align: right;
+}
+.search-button {
+  background-color: #bb8bf9;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: #fffcf7;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500px;
+  margin: 5px;
+  padding: 8px;
+}
+.search-button:hover {
+  background-color: #ad6aff;
+    </style>
+</head>
+<body>
+<div class="container">
+      <form id="search-city">
+        <input
+          id="search-city-input"
+          type="text"
+          placeholder="Enter a city"
+        />
+        <button class="search-button">Search</button>
+      </form>
+      <br>
+      <h1 id="city">
+        Kielce, Poland
+      </h1>
+      <h3>Monday 12:00</h3>
+      <h4>sunny</h4>
+      <div class="row">
+        <div class="weather-icon"><span style="font-size: 7em;">☀️</span>
+           <div class="temp" id="temp-now" > 25
+            <span class="temp-unit" id="temp-unit"> <a href="#" id = "celcius-link">°C</a>  |  <a href="#" id = "farenheit-link">°F</a></span>
+        <div class="col-md-6 col-md-pull-6"> <br> 
+          Precipitation: 5%
+          <br>
+          Humidity: 80%<br>
+          Wind: 5 km/h
+        <p>
+          <div class="row">
+              <div class="col-xs-2 col-sm-4">Temperature</div>
+              <div class="col-xs-2 col-sm-4">Precipitation</div>
+              <div class="col-xs-2 col-sm-4">Wind</div>
+            </div>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><span style="font-size: 7em;">☁️</span>25° C</br> Tuesday</div
+        </div>
+        <div class="col"><span style="font-size: 7em;">🌧️</span>18° C</br> Wednesday</div
+        </div>
+        <div class="col"><span style="font-size: 7em;">🌤️</span>21° C</br> Thursday</div
+        </div>
+        <div class="col"><span style="font-size: 7em;">🌤️</span>23° C</br> Friday</div
+        </div>
+        <div class="col"><span style="font-size: 7em;">☀️</span>30° C</br> Saturday</div
+        </div>
+      </div>
+      <script>
+    let date = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+let currentDay = days[date.getDay()];
+let currentHour = date.getHours();
+if (currentHour < 10) {
+  hours = `0${hours}`;
+}
+if (currenMinutes < 10) {
+  minutes = `0${minutes}`;
+let currentMinute = date.getMinutes();
+
+let now = document.querySelector("h3");
+now.innerHTML = `${currentDay}, ${currentHour}:${currentMinute}`;
+
+function changeCity(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-city-input");
+  let city = document.querySelector("#city");
+  city.innerHTML = `${searchInput.value}`;
+}
+let form = document.querySelector("form");
+form.addEventListener("submit", changeCity);
+//Challenge 3
+function convertToFarenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-now");
+  temperatureElement.innerHTML = 66;
+}
+function convertToCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-now");
+  temperatureElement.innerHTML = 25;
+}
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", convertToFarenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToCelcius);
+</script>
+</body>
+</html>

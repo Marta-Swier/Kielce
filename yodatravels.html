@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoda Travels</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 72px;
+        color: rgb(214, 224, 228);
+        border: 1px solid;
+        border-radius: 10px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 28px;
+        color: rgb(214, 224, 228);
+      }
+      .learn-more {
+        text-decoration: none;
+        color: cyan;
+      }
+      .learn-more:hover {
+        text-decoration: underline;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+        border-radius: 10px;
+        padding: 20 px;
+      }
+      h3,
+      p {
+        color: rgb(214, 224, 228);
+        font-size: 20px;
+        text-align: center;
+        line-height: 1.5;
+      }
+      h4 {
+        font-size: 30px;
+        text-align: center;
+        color: rgb(214, 224, 228);
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        font-size: 25px;
+        background: #7e44c5;
+        color: rgb(249, 248, 249);
+        padding: 15px 20px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #7e44c5;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+      body {
+        display: block;
+        margin: 8px;
+        padding: 60px;
+      }
+      .content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 60px;
+        background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>✈️ <strong>Baby Yoda travels</strong> ✈️</h1>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/085/988/original/baby-yoda-mpampis.gif?1686898392
+"
+        alt="Yoda Travels"
+        width="500"
+        height="300"
+      />
+      <h2>
+        This year getting to know the Earthians was planned as a part of my
+        everlasting training so I went to the mysterious island of
+        <a
+          href="https://en.wikipedia.org/wiki/Crete"
+          target="_blank"
+          class="learn-more"
+        >
+          Crete
+        </a>
+        🇬🇷 with a herd of four humans.
+        <br />
+      </h2>
+      <h3>
+        <hr />
+        <br />
+          At first, I was both petrified and taken aback by how tall they were
+          and how rustling the language they spoke was 🇵🇱. I couldn’t make sense
+          of anything and only calmed down when I realized I am not their next
+          meal. The smallest and the biggest human males took me to places,
+          showed me the sights, and rubbed me behind my ear (just like my mum
+          did when I was still a newborn). To kill the time I played silly
+          tricks on the Earthians, like growing them Yoda ears 🤣- good that
+          they haven’t spotted that.
+<hr />
+        </h3>
+        <p>
+          I trained the humans and gave them a bit of my force for being so generous to me.
+          You may still feel the force in the upcoming months and marvel at the
+          progress the human herd is making. 
+          <br> <em> May the force be with you 🫶🏻!</em>
+        </p>
+        <p>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/086/032/original/5ccca304-9565-4fde-b197-993a4f00039f-baby-yoda-grogu-boba-fett-1643800811.jpeg?1686928141"
+            alt="Yoda travels"
+            width="600"
+            height="300"
+          />
+        </p>
+        <h4>
+          <hr />
+           <em> Click the button below to find out if you can go with me </em></h4>
+      </h3>
+      <button>Yodaphone</button>
+      <p>
+        <br />
+        This page was built by Marta Świerczyńska
+      </p>
+      <script>
+        function contact() {
+          let name = prompt("What is your name?");
+          let suitability = prompt("Do you like Baby Yoda?");
+          suitability = suitability.toLowerCase();
+          let heading = document.querySelector("h4");
+          if (suitability === "yes") {
+            heading.innerHTML = "Hello " + name + ", let's travel together!";
+          } else {
+            heading.innerHTML =
+              "Sorry " + name + ",  we cannot travel together";
+          }
+        }
+        let button = document.querySelector("button");
+        button.addEventListener("click", contact);
+      </script>
+    </div>
+  </body>
+</html>
